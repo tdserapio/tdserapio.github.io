@@ -1,0 +1,104 @@
+*
+{
+	font-family: Manrope;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    width:100%;
+}
+
+.container
+{
+    display:flex;
+    width:90%;
+    flex-direction: column;
+    max-width:600px;
+}
+
+hr {
+    display:flex;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.inp{
+	display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    padding:8px 8px;
+
+}
+
+.inp_buttons
+{
+    cursor:pointer;
+    border-radius:10px;
+    background-color:rgb(240, 240, 240);
+    width:60%;
+    height:50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.inp_buttons:hover{
+    background-color:rgb(220, 220, 220);
+}
+
+.aka
+{
+    font-size: 15px;
+    text-decoration: none;
+    color:black;
+}
+
+.name
+{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.chatmessage
+{
+    cursor:default;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    padding:1px 1px;
+    width:55%;
+    margin-top:10px;
+}
+
+.maker
+{
+    background-color:rgb(227, 227, 227);
+    float:left;
+}
+
+.you
+{
+    background-color:#60a2ff;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 20px;
+    float:right;
+}
+
+.text_message
+{
+    margin:15px;
+    font-size:17px;
+}
+
+.conversation
+{
+    max-height: 40vh;
+    overflow-y: scroll;
+}
