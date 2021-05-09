@@ -27,7 +27,6 @@ hr {
     max-height: 30vh;
     overflow-y: scroll;
     width:50%;
-
 }
 .inp_buttons
 {
@@ -42,6 +41,7 @@ hr {
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
+    font-size:min(4vw, 15px);
 }
 
 .inp_buttons:hover{

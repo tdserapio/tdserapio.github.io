@@ -8,6 +8,11 @@ const chat = (hid, hih) => {
     var text_message = document.createElement('p')
     text_message.className = 'text_message'
     text_message.innerHTML = hih;
+    if (hid == 'emoji') {
+        msg.style.backgroundColor = 'white';
+        text_message.style.float = 'right';
+        text_message.style.fontSize = '35px';
+    }
     msg.appendChild(text_message)
     conversation.appendChild(msg);
     setTimeout(() => {
@@ -32,7 +37,9 @@ const chat = (hid, hih) => {
         } else if (hid != 'emoji') {
             text_message.innerHTML = "I do not understand...";
         } else {
+            msg.style.backgroundColor = 'white';
             text_message.innerHTML = hih;
+            text_message.style.fontSize = '35px';
         }
 
         // End Responses
