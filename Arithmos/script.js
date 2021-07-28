@@ -41,8 +41,12 @@ function checkQuestion() {
 
 function newQuestion() {
     var op = ["+", "-", "x", "÷"][Math.round(Math.random() * 3)];
-    var n1 = Math.round(Math.random() * 1000);
-    var n2 = Math.round(Math.random() * 1000);
+
+    var s1 = [-1, 1][Math.round(Math.random())];
+    var s2 = [-1, 1][Math.round(Math.random())];
+
+    var n1 = Math.round(Math.random() * 1000) * s1;
+    var n2 = Math.round(Math.random() * 1000) * s2;
 
     if (op == "÷") {
         while (n1 % n2 != 0) {
