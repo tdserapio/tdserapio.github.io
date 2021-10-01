@@ -27,11 +27,9 @@ const chat = (hid, hih) => {
 
         // Responses
         if (hid == 'tmay') {
-            text_message.innerHTML = "I am Troy Serapio, a 13 year old Filipino who loves programming.";
+            text_message.innerHTML = "I am Troy Serapio, a 13 year old Filipino who loves programming and math. Kinda cool too 😎. ";
         } else if (hid == 'ways') {
-            text_message.innerHTML = "I am quite proficient in Python, as well as HTML, CSS, and Vanilla JavaScript. <br /><br />Although quite decent in C++ and Unity Game Development, it is still quite... in the development 😉.";
-        } else if (hid == 'pp') {
-            text_message.innerHTML = "This is in fact my first recorded project, my portfolio! <br /><br /> I shall put some in the future.";
+            text_message.innerHTML = "Comfortable: <br>    - Python <br>    - Java <br>    - HTML, CSS, JS <br>    - Unity Game Engine <br><br>Knows a bit: <br>    - C++";
         } else if (hid == 'c') {
             text_message.innerHTML = "Here is my YouTube Account: <a href='https://www.youtube.com/channel/UC6zYIB1rlM3IfZz7QhriOVQ'>Troy S</a> <br /> My Github Account: <a href='https://github.com/tdserapio'>Github</a> <br /> Here is my Gmail account: <a href='mailto:troy.serapio@gmail.com'>Gmail</a> <br /><br /> Thats all!"
         } else if (hid == "ol") {
