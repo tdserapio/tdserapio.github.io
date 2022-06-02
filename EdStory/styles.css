@@ -47,12 +47,13 @@ body {
 }
 
 .res {
-    font-size: 7vh;
+    font-size: 4vh;
     font-weight: 900;
     width: 45vh;
     text-align: center;
 
-    padding: 8px 8px;
+    padding: 8px 25px;
+    border-radius: 10vh;
 }
 
 .sub_button {
@@ -82,8 +83,10 @@ body {
 
 .correct {
     color: #60D394;
+    border: 5px solid #60D394;
 }
 
 .wrong {
     color: #EE6055;
+    border: 5px solid #EE6055;
 }
