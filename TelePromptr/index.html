@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TelePrompt</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@400;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">TelePromptr</h1>
+        <h2 class="subtitle"></h2>
+        <br>
+        <div class="text">Press the "Start" button to start.</div>
+        <br>
+
+        <div class="wpm">
+            <h2 class="wpm_text">WPM: </h2>
+            <input id="wpm" type="number" min="1" value="1">
+
+
+            <br>
+
+            <h2 class="file_text">File: </h2>
+            <div class="file_wrapper">
+                <input id="file" type="file" min="1" value="200" accept=".txt" onchange="isGreen(this)">
+            </div>
+        </div>
+
+        <button class="button_start" onclick="start()">Start</button>
+    </div>
+</body>
+
+<p class="hidden"></p>
+<script src="script.js"></script>
+
+</html>
