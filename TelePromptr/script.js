@@ -41,6 +41,10 @@ class Interval {
     }
 }
 
+function redirect(link) {
+    window.location.href = link;
+}
+
 function isGreen(input) {
     if (input.files[0]) {
         document.querySelector(".file_wrapper").style.backgroundColor = "rgb(174, 255, 174)";

@@ -33,7 +33,7 @@ const chat = (hid, hih) => {
         } else if (hid == 'c') {
             text_message.innerHTML = "Here is my YouTube Account: <a href='https://www.youtube.com/channel/UC6zYIB1rlM3IfZz7QhriOVQ'>Troy S</a> <br /> My Github Account: <a href='https://github.com/tdserapio'>Github</a> <br /> Here is my Gmail account: <a href='mailto:troy.serapio@gmail.com'>Gmail</a> <br /><br /> Thats all!"
         } else if (hid == "ol") {
-            text_message.innerHTML = "Here is: <br>    - Arithmos: <a href='https://tdserapio.github.io/Arithmos'>Arithmos</a>"
+            text_message.innerHTML = "Here is: <br>    - Arithmos: <a href='https://tdserapio.github.io/Arithmos'>Arithmos</a><br>    - TelePromptr: <a href='https://tdserapio.github.io/TelePromptr'>TelePromptr</a>"
         } else if (hid != 'emoji') {
             text_message.innerHTML = "I do not understand...";
         } else {
