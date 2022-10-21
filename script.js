@@ -27,7 +27,8 @@ const chat = (hid, hih) => {
 
         // Responses
         if (hid == 'tmay') {
-            text_message.innerHTML = "I am Troy Serapio, a 13 year old Filipino who loves programming and math. Kinda cool too 😎. ";
+            var DOB = "September 12, 2008";
+            text_message.innerHTML = `I am Troy Serapio, a ${ Math.round( ( Date.now() - Date.parse(DOB) ) / 31536000000 ) } year old Filipino who loves programming and math. Kinda cool too 😎. `;
         } else if (hid == 'ways') {
             text_message.innerHTML = "Comfortable: <br>    - Python <br>    - Java <br>    - HTML, CSS, JS <br>    - Unity Game Engine <br><br>Knows a bit: <br>    - C++";
         } else if (hid == 'c') {
