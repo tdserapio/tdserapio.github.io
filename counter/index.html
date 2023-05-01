@@ -16,9 +16,15 @@
         <button onclick="add(1)">Add 1</button>
         <br>
         <div style="width: 50%; display: flex; justify-content: center;">
-            <input id="customN" type="number" onchange="changeButton()" value="0">
+            <input id="customN" type="number" oninput="changeButton()" onchange="changeButton()" value="0">
             <button id="addN" onclick="add(this.textContent)">Add 0</button>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button onclick="clearThing()">Clear</button>
     </div>
 </body>
 

@@ -12,5 +12,14 @@ function add(numero) {
 }
 
 function changeButton() {
-    document.querySelector("#addN").textContent = "Add " + String(document.querySelector("#customN").value);
+    var stringy = String(document.querySelector("#customN").value);
+    if (stringy == "") {
+        stringy = "0";
+    }
+    document.querySelector("#addN").textContent = "Add " + stringy;
+}
+
+function clearThing() {
+    curr_num = 0;
+    document.querySelector("#number").textContent = curr_num;
 }
