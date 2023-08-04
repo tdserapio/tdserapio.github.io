@@ -1,0 +1,165 @@
+* 
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+/*
+
+Container
+
+*/
+
+html, body {
+    width: 100%;
+    height: 110%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 1000px;
+
+    overflow-y: visible;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-container {
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    height: 100%;
+    max-width: 884px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+/*
+
+Text
+
+*/
+
+.justify {
+    text-align: justify;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+header {
+    font-size: min(7vh, 7vw);
+    font-weight: bold;
+
+    margin-bottom: 0;
+    width: fit-content;
+}
+
+h1 {
+    font-size: min(4.25vh, 4.25vw);
+    font-weight: normal;
+
+    padding-top: 0;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: min(3.3vh, 3.3vw);
+    font-weight: normal;
+
+    padding-top: 0;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: min(2.6vh, 2.6vw);
+    font-weight: normal;
+
+    text-align: justify;
+
+    padding-top: 0;
+    margin-top: 0;
+}
+
+subtitle {
+    font-size: min(2vw, 2vh);
+    font-weight: normal;
+
+    color: rgb(88, 88, 88);
+}
+
+code {
+    font-family: monospace;
+    color: #E97E80;
+    background-color: #EDEDEB;
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+ol {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/*
+
+Images
+
+*/
+
+.images {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.image {
+    flex: 0.8;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    width: 90%;
+}
+
+img:hover {
+    cursor: pointer;
+    opacity: 90%;
+    background-color: gray;
+}
+
+.emergency_br {
+    flex: 0.5;
+}
+
+/*
+
+Gist
+
+*/
+
+.gist{font-size:13px;line-height:18px;width:90%;align-self: center;}
+.gist pre{font-family:Menlo,Monaco,'Bitstream Vera Sans Mono','Courier New',monospace !important}
+.gist-meta{font-family:Arial,sans-serif;font-size:13px !important}
+.gist-meta a{color:#3b5998 !important;font-weight:bold;text-decoration:none}
+.gist-meta a:hover{text-decoration:underline}
