@@ -15,22 +15,21 @@
         <br>
         <header>Detecting Change Between CXR Images Using Siamese Neural Networks</header>
         <br>
-        <h2>Troy Serapio • <i>July 27, 2023</i></h2>
+        <h2>Troy Serapio • <i>August 6, 2023</i></h2>
         <hr style="width: 100%;">
         <br>
         <h3>Siamese neural networks, also called twin neural networks, are really helpful in most machine learning tasks that include the comparison of two objects. This architecture is commonly used in image comparison tasks such as facial recognition, and temporal characterizations. 
-            <br><br>
             With siamese networks, it becomes possible to detect changes between a series of patient’s chest X-rays (CXRs). For this article, we will focus on the progression of pleural effusion among patients as an example. We will use ImaGenome's labels from the MIMIC-CXR dataset, which is a collection of temporal series of CXR images with descriptions.</h3>
         <br>
         <h1>What are Siamese neural networks, exactly?</h1>
         <h3>Siamese neural networks are two parallel and identically-weighted neural networks that take in two (different) input vectors per network. In our use case, these input vectors two CXR images. </h3>
         <div class="images">
-            <div class="image">
+            <div class="image" style="flex: 0.3">
                 <img src="images/image1.png">
                 <div class="emergency_br"></div>
                 <subtitle>Taken from MIMIC-CXR dataset</subtitle>
             </div>
-            <div class="image">
+            <div class="image" style="flex: 0.3">
                 <img src="images/image2.png">
                 <div class="emergency_br"></div>
                 <subtitle>Taken from MIMIC-CXR dataset</subtitle>
@@ -49,7 +48,6 @@
         </div>
         <br>
         <h3>The special part about siamese networks is the part where these output vectors are compared against each other to come up with a prediction (eg. whether or not a change was detected). 
-            <br><br>
             This prediction is then trained on a loss function (cross-entropy loss). The reversed arrows emphasize the data retraining itself by going back from the loss function until the first layer of the CNN. This could be thought of as the model learning how to make its own version of the original input.</h3>
         <div class="images">
             <div class="image" style="width: 80%;">
@@ -66,15 +64,12 @@
         <h1>Implementing Siamese neural networks</h1>
         <h2>Setting-Up The Environment</h2>
         <h3>I used PyTorch for the implementation of Siamese Neural Networks as PyTorch has models specifically trained on X-ray images (PyTorchXRayVision). PyTorch is also very easy to use. I also used <code>colab.research.google.com</code> as the environment, but any Jupyter-like software would be fine. </h3>
-        <script src="https://gist.github.com/tdserapio/d28360a4d6714c2aec441ee7193d2206.js"></script>
         <h2>Preprocessing The Images</h2>
         <h3>After setting-up PyTorch, we then need to have data to train the model on. In this case, I will use the ImaGenome dataset. Here is the link to the Google Drive of the preprocessed dataset. From here, all we need to do is read the files in the dataset. We would convert these files into pandas.DataFrames to make it very convenient to access the data from these files. </h3>
-        <script src="https://gist.github.com/tdserapio/d28360a4d6714c2aec441ee7193d2206.js"></script>
         <h3>In addition, it would be far more convenient to store these DataFrames as a <code>Dataset</code> object, which is something we would have to implement by ourselves. Note that for this task, we would need to turn the images from the ImaGenome dataset into grayscale as the model that we will use can only process grayscale images. </h3>
-        <script src="https://gist.github.com/tdserapio/d28360a4d6714c2aec441ee7193d2206.js"></script>
         <h1>Siamese neural network implementation</h1>
         <h2>Forward Propagation</h2>
-        <h3>First, the model takes in two images (A and B), which will go through two identical and parallel convolutional neural networks (CNN). The two outputs of the CNN are then combined, thus generating the model’s prediction. This is called forward propagation, wherein the data is passed on to the next layer of the neural network. </h3>
+        <h3>First, the model takes in two images (A and B), which will go through two identical and parallel convolutional neural networks (CNN). The two outputs of the CNN are then combined, thus generating the model’s prediction. This is called forward propagation, wherein the data is passed on to the next layer of the neural network. To actually implement this in Python is not too difficult. We would store this architecture in a Python class called <code>SiameseNetwork</code>. </h3>
         <div class="images">
             <div class="image" style="width: 80%;">
                 <img src="images/figure3.png">
@@ -85,8 +80,6 @@
             </div>
         </div>
         <br>
-        <h3>To actually implement this in Python is not too difficult. We would store this architecture in a Python class called <code>SiameseNetwork</code>. </h3>
-        <script src="https://gist.github.com/tdserapio/d28360a4d6714c2aec441ee7193d2206.js"></script>
         <h2>Backward Propagation</h2>
         <h3>From there, the output is passed through a loss function, which in turn retrains the model. The loss function calculates how well the model did by comparing the generated output to the “correct” output. This is called backward propagation, wherein the model traces back its steps to see where it went wrong. This leads us to training and testing the model. </h3>
         <div class="images">
@@ -102,7 +95,6 @@
         <h1>Training and Testing The Model</h1>
         <h2>Training</h2>
         <h3>Training would be giving the model a multitude of CXR images, and then performing the forward and backward propagation processes repeatedly until it learns to output correct predictions. It is able to learn to do so with an “optimizer” (which follows the loss function) tweaking and readjusting the neural network’s weights until it is able to generate a correct prediction for most samples. You can imagine this as a teacher assisting a student based on their score on a test. </h3>
-        <script src="https://gist.github.com/tdserapio/d28360a4d6714c2aec441ee7193d2206.js"></script>
         <div class="images">
             <div class="image" style="width: 80%;">
                 <img src="images/figure5.png">
@@ -115,7 +107,6 @@
         <br>
         <h2>Testing</h2>
         <h3>Testing would be giving the model a multitude of CXR images, then seeing how close the model is to correctly predicting the right answer. You can imagine this as a teacher giving a quiz to a student, and seeing how well the student performs.  </h3>
-        <script src="https://gist.github.com/tdserapio/d28360a4d6714c2aec441ee7193d2206.js"></script>
         <div class="images">
             <div class="image" style="width: 80%;">
                 <img src="images/figure6.png">
@@ -128,49 +119,57 @@
         <br>
 
         <h1>Output Discussion</h1>
-        <h3>Here we may see that the Siamese neural networks seemed to overgeneralize into always placing itself on the “no change” category. </h3>
+        <table class="table">
+            <tr class="tr">
+                <th class="th">Dataset used</th>
+                <th class="th">Accuracy</th>
+                <th class="th">Average loss</th>
+            </tr>
+            <tr class="tr">
+                <td class="td">ImaGenome Labels</td>
+                <td class="td">54%</td>
+                <td class="td">0.173</td>
+            </tr>
+            <tr class="tr">
+                <td class="td">MNIST Dataset</td>
+                <td class="td">94.2%</td>
+                <td class="td">0.0426</td>
+            </tr>
+        </table>
+        <br>
+        <h3>Here we may see that the Siamese neural networks' accuracy is almost a coin flip. In reality, this is due to the fact that it seems to always overgeneralize into always assuming that the CXR image is in the “no change” category.</h3>
         <div class="images">
-            <div class="image" style="width: 80%;">
+            <div class="image" style="width: 80%; flex: 0.7;">
                 <img src="images/nochange.png">
             </div>
         </div>
         <div class="images">
-            <div class="image" style="width: 80%;">
+            <div class="image" style="width: 80%; flex: 0.7;">
                 <img src="images/yeschange.png">
-            </div>
-        </div>
-        <div class="images">
-            <div class="image" style="width: 80%;">
-                <img src="images/imagenome.png">
                 <div class="emergency_br"></div>
                 <subtitle>
-                    ImaGenome Performance
+                    ImaGenome Example
                 </subtitle>
             </div>
         </div>
         <br>
-        <h3>However, upon further investigation, this is somewhat a data problem which could be solved by adding more data. This is what I discovered with the MNIST dataset, and seeing whether or not the model would be able to detect whether the two handwritten digits are both 1s or not. </h3>
+        <h3>However, upon further investigation, this is somewhat a problem with the dataset which could be theoretically resolved by having more training data, or a better architecture. This is what I thought of when training the same model with the MNIST dataset, which performed astoundingly better in detecting whether or not a pair of handwritten digits are both 1s or not. </h3>
         <div class="images">
-            <div class="image" style="width: 80%;">
+            <div class="image" style="width: 80%; flex: 0.7;">
                 <img src="images/mnist-nochange.png">
             </div>
         </div>
         <div class="images">
-            <div class="image" style="width: 80%;">
+            <div class="image" style="width: 80%; flex: 0.7;">
                 <img src="images/mnist-yeschange.png">
-            </div>
-        </div>
-        <div class="images">
-            <div class="image" style="width: 80%;">
-                <img src="images/mnist.png">
                 <div class="emergency_br"></div>
                 <subtitle>
-                    MNIST Performance
+                    MNIST Example
                 </subtitle>
             </div>
         </div>
         <br>
-        <h3>Another problem with CXR images and their description is its complexity with the many different organs that may influence the result, thus making it a much harder task. In addition to that, radiologists may sometimes disagree with their results, with one saying “nothing significant changed” while another saying otherwise. Despite that, especially with the MNIST dataset, we can tell just how powerful Siamese neural networks can be. </h3>
+        <h3>Another problem with CXR images and their description is its complexity with the many different organs that may influence the result, thus making it a much harder task. In addition to that, radiologists may sometimes disagree with their results, with one saying “nothing significant changed” while another saying otherwise. Despite that, especially with the MNIST dataset, we can tell just how powerful Siamese neural networks can be in these types of machine learning task. </h3>
         <h1>Last Words</h1>
         <h3>In conclusion, siamese neural networks offer a promising approach to detecting changes and tracking progress in medical imaging, especially in chest X-rays.
         This powerful technology can help medical professionals identify and intervene in conditions such as pleural effusion and other pathologies, perhaps even before they become symptomatic.
