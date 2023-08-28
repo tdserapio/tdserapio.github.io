@@ -22,7 +22,7 @@
             <br><br>From here, we attempted to use Siamese neural networks to detect changes between a series of patient’s chest X-rays (CXRs). More specifically, we will focus on the progression of pleural effusion on the chest X-rays. We will use ImaGenome dataset, which is derived from the MIMIC-CXR dataset. The ImaGenome dataset is a collection of temporal series of CXR images with descriptions.</h3>
         <br>
         <h1>What are Siamese neural networks, exactly?</h1>
-        <h3>The Siamese neural network is one and identically-weighted neural networks that take in two (different) input vectors. In our use case, these input vectors are two CXR images. </h3>
+        <h3>The Siamese neural network is <a href="https://github.com/tdserapio/CXR-Siamese-Networks/blob/main/sample.py#L73-L76">one neural network</a> that take in two (different) input vectors. In our use case, these input vectors are two CXR images. </h3>
         <div class="images">
             <div class="image" style="flex: 0.3">
                 <img src="images/image1.png">
@@ -36,7 +36,7 @@
             </div>
         </div>
         <br>
-        <h3>These input vectors are then fed into the convolutional neural network, and the neural networks generate two separate embeddings (vectors that are far easier to compare to each other). This could be thought of as the model outputting its own version of the original input.</h3>
+        <h3>These input vectors are then fed into the convolutional neural network, and the neural networks generate <a href="https://github.com/tdserapio/CXR-Siamese-Networks/blob/main/sample.py#L79">two separate embeddings</a> (vectors that are far easier to compare to each other). This could be thought of as the model outputting its own version of the original input.</h3>
         <div class="images">
             <div class="image" style="width: 80%;">
                 <img src="images/figure11.png">
@@ -47,7 +47,7 @@
             </div>
         </div>
         <br>
-        <h3>These output vectors are compared against each other to come up with a prediction (eg. whether or not a change was detected). This prediction is then trained on weighted cross-entropy loss, with an Adam optimizer to tweak its weights. This mechanism allows for the model to form a prediction based on two separate inputs, which allows us to track the progression of pleural effusion between two CXR images.</h3>
+        <h3>These output vectors are concatenated to each other and ran through a <a href="https://github.com/tdserapio/CXR-Siamese-Networks/blob/main/sample.py#L80-L82">multi-layer perceptron</a> to come up with a prediction (eg. whether or not a change was detected). This prediction is then trained on <a href="https://github.com/tdserapio/CXR-Siamese-Networks/blob/main/sample.py#L120-L138">weighted cross-entropy loss</a>, with an Adam optimizer to tweak its weights. This mechanism allows for the model to form a prediction based on two separate inputs, which allows us to track the progression of pleural effusion between two CXR images.</h3>
         <br>
         <h1>Output Discussion</h1>
         <table class="table">
