@@ -1,0 +1,14 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #0A0C22; overflow-y: hidden; overflow-x: hidden;">
+    
+
+    <script>
+        for (let i = 0; i < 100; i++) document.querySelector("body").innerHTML += `<div style="position: absolute; top: ${Math.random() * 1000}px; left: ${Math.random() * 1000}px; width: 5px; height: 5px; background-color: white; border-radius: 10vh;"></div>`;
+    </script>
+</body>
+</html>
