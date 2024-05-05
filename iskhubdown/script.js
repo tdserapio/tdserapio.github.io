@@ -15,11 +15,10 @@ function isSiteOnline(url,callback) {
         clearTimeout(timer);
         callback(false);
     }
-
-    img.src = url+"/favicon.ico";
+    img.src = "https://khub.mc.pshs.edu.ph/pluginfile.php/1/theme_moove/sliderimage1/1714263524/Photo-Mr.-Bernard-Llaguno.png";
 }
 
-isSiteOnline("https://khub.mc.pshs.edu.ph/",function(found){
+isSiteOnline("https://khub.mc.pshs.edu.ph",function(found){
     if(found) {
         document.querySelector("h1").innerHTML = "KHub is UP!";
         document.querySelector("p").innerHTML = "Hey, do your reqs!";

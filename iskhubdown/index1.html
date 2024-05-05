@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Website Status</title>
+</head>
+<body>
+    <h1>Website Status Checker</h1>
+    <p>Enter a website URL to check its status:</p>
+    <input type="text" id="websiteUrl" placeholder="https://example.com">
+    <button onclick="checkWebsiteStatus()">Check Status</button>
+    <p id="statusMessage"></p>
+
+    <script>
+        function checkWebsiteStatus() {
+            const urlInput = document.getElementById('websiteUrl').value;
+            const statusMessage = document.getElementById('statusMessage');
+
+            const img = new Image();
+
+            // Set the image source to the website URL
+            img.src = urlInput;
+            
+            img.onload = function() {
+                statusMessage.textContent = `Website is UP`;
+            };
+
+            img.onerror = function() {
+                statusMessage.textContent = `Website is DOWN`;
+            };
+        }
+    </script>
+</body>
+</html>
