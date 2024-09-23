@@ -30,11 +30,11 @@ const chat = (hid, hih) => {
             var DOB = "September 12, 2008";
             text_message.innerHTML = `I am Troy Serapio, a ${ Math.round( ( Date.now() - Date.parse(DOB) ) / 31536000000 ) } year old Filipino who loves programming and math. Kinda cool too 😎. `;
         } else if (hid == 'ways') {
-            text_message.innerHTML = "Comfortable: <br>    - Python <br>    - Java <br>    - HTML, CSS, JS <br>    - Unity Game Engine <br><br>Knows a bit: <br>    - C++";
+            text_message.innerHTML = "Knowledgable in Python, C++, JavaScript (HTML-CSS-JS, NextJS, ExpressJS), and the Unity Game Engine. Intermediate in Machine Learning, with a focus on NLP and a bit of Computer Vision: has experience using the Transformers library, OpenCV library, Tensorflow library, and Google Mediapipe solutions. ";
         } else if (hid == 'c') {
-            text_message.innerHTML = "Here is my YouTube Account: <a href='https://www.youtube.com/channel/UC6zYIB1rlM3IfZz7QhriOVQ'>Troy S</a> <br /> My Github Account: <a href='https://github.com/tdserapio'>Github</a> <br /> Here is my Gmail account: <a href='mailto:troy.serapio@gmail.com'>Gmail</a> <br /><br /> Thats all!"
+            text_message.innerHTML = "Here is my YouTube Account: <a href='https://www.youtube.com/@troyserapio485'>Troy Serapio</a> <br /> My Github Account: <a href='https://github.com/tdserapio'>Github</a> <br /> Here is my Gmail account: <a href='mailto:troy.serapio@gmail.com'>Gmail</a> <br />"
         } else if (hid == "ol") {
-            text_message.innerHTML = "Here is: <br>    - Arithmos: <a href='https://tdserapio.github.io/Arithmos'>Arithmos</a><br>    - TelePromptr: <a href='https://tdserapio.github.io/TelePromptr'>TelePromptr</a>"
+            text_message.innerHTML = "Here is: <br>    - Arithmos: <a href='https://tdserapio.github.io/Arithmos'>Arithmos</a><br>    - TelePromptr: <a href='https://tdserapio.github.io/TelePromptr'>TelePromptr</a><br>    - TelePromptr: <a href='https://tdserapio.github.io/counter'>Counter</a>"
         } else if (hid != 'emoji') {
             text_message.innerHTML = "I do not understand...";
         } else {
